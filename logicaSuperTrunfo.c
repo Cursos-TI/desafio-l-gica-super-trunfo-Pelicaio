@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+//Dados da Carta 1
 char estado1[10];
 char city1[10];
 char cdg1[3];
@@ -29,8 +30,14 @@ double capita2;
 int main(){
 
     //Obtenção dos dados da Carta 1
+    printf("Digite o Estado da Carta 1: \n"); 
+    scanf("%s", estado1);
 
-    
+    printf("Digite a cidade da Carta 1: \n");
+    scanf("%s", city1);
+
+    printf("Digite o Codigo da Carta 1: \n");
+    scanf("%s", cdg1);
 
     printf("Digite a população da Carta 1: \n");
     scanf("%d", &pop1);
@@ -48,8 +55,14 @@ int main(){
     capita1 = pib1 / area;
 
     //Obtenção dos Dados da Carta 2
+    printf("Digite o Estado da Carta 2: \n");
+    scanf("%s", estado2);
 
+    printf("Digite a cidade da Carta 2: \n");
+    scanf("%s", city2);
 
+    printf("Digite o Codigo da Carta 2: \n");
+    scanf("%s", cdg2);
 
     printf("Digite a população da Carta 2: \n");
     scanf("%d", &pop2);
@@ -67,61 +80,70 @@ int main(){
     capita2 = pib2 / area2;
 
     //Comparações com if else
+    //Usei um int como contador para determinar a carta vencedora
 
     if (pop1 > pop2) {
-        printf("Carta 1 Venceu: %d", pop1);
+        printf("\nPopulação: %d - Carta 1 Venceu\n", pop1);
         contadorA++;
 
     } else {
-        printf("Carta 2 Venceu: %d", pop2);
+        printf("\nPopulação: %d - Carta 2 Venceu: %d\n", pop2);
         contadorB++;
     }
 
     if (pib1 > pib2){
-        printf("Carta 1 Venceu: %f", pib1);
+        printf("\nPIB: %f - Carta 1 Venceu\n", pib1);
         contadorA++;
 
     } else{
-        printf("Carta 2 Venceu: %f", pib2);
+        printf("\nPIB: %f - Carta 2 Venceu\n", pib2);
         contadorB++;
     }
 
     if (pts1 > pts2){
-        printf("Carta 1 Venceu: %d", pts1);
+        printf("\n Pontos Turisticos: %d - Carta 1 Venceu", pts1);
         contadorA++;
 
     } else{
-        printf("Carta 2 Venceu: %d", pts2);
+        printf("\nPontos Turisticos: %d - Carta 2 Venceu\n", pts2);
         contadorB++;
     }
 
     if (area > area2){
-        printf("Carta 1 Venceu: %f",area);
+        printf("\nÁrea: %f - Carta 1 Venceu",area);
         contadorA++;
 
     } else{
-        printf("Carta 2 Venceu: %f",area2);
+        printf("\nÁrea: %f - Carta 2 Venceu\n",area2);
         contadorB++;
     }
 
     if (densidade1 < densidade2){
-        print("Carta 1 Venceu: %f", densidade1);
+        printf("\nDensidade Demográfica: %f - Carta 1 Venceu\n", densidade1);
         contadorA++;
 
     } else{
-        printf("Carta 2 Venceu: %f", densidade2);
+        printf("\nDensidade Demográfica: %f - Carta 2 Venceu\n", densidade2);
+        contadorB++;
+    }
+
+    if (capita1 > capita2){
+        printf("\nPIB per Capita: %f - Carta 1 Vence\n", capita1);
+        contadorA++;
+    } else{
+        printf("\nPIB per Capita: %f - Carta 2 Vence\n",capita2);
         contadorB++;
     }
 
     if (contadorA > contadorB){
-        printf("Carta 1 é a vencedora");
+        printf("\nCarta 1 é a vencedora\n");
 
-    }else {
-        printf("Carta 2 é a vencedora");
+    }else if (contadorB < contadorA) {
+        printf("\nCarta 2 é a vencedora\n");
+
+    }else{
+        printf("\nEmpate!\n");
     }
-
-
-
 
 
 
